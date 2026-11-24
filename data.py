@@ -8,8 +8,8 @@ from typing import Dict, List, Tuple
 DATE_TITLE = "Monday 23 November 2026"
 TOP_META_LEFT = "THE WORLD IN ONE DAY"
 SUBHEAD = (
-    "EU unveils 22nd Russia sanctions · US blacklists Iran shadow-bank network · "
-    "Drones strike Perm Lukoil refinery"
+    "Drones strike Perm Lukoil refinery · Thales signs €240m+ Copernicus climate satellite deal · "
+    "Car bomb injures 23 in Colombia"
 )
 
 REGIONS: List[Dict[str, object]] = [
@@ -70,6 +70,36 @@ HERO_STORIES: List[FeatureStory] = [
     FeatureStory(
         num=1,
         region="europe",
+        kicker="PERM, RUSSIA · ENERGY WAR",
+        tag="REPORTED",
+        headline_html="Drones strike Russia's Perm Lukoil refinery",
+        deck="Reports say long-range drones hit the refinery 1,500 km inside Russia, killing 1 and damaging 3 units.",
+        source="AP · Reuters",
+    ),
+    FeatureStory(
+        num=2,
+        region="world_space",
+        kicker="EUROPE · SPACE & CLIMATE",
+        tag="OFFICIAL",
+        headline_html='Thales signs <span class="sans-num">€240m+</span> Copernicus satellite deal',
+        deck="Contract with Germany's OHB builds Sentinel 3NG altimeters for global ocean and ice tracking.",
+        source="Reuters · Thales",
+    ),
+    FeatureStory(
+        num=3,
+        region="s_america",
+        kicker="COLOMBIA · SECURITY",
+        tag="REPORTED",
+        headline_html="Car bomb injures 23 in Villavicencio blast",
+        deck="Morning vehicle bombing damages commercial blocks; officials probe regional militants.",
+        source="AP · Al Jazeera",
+    ),
+]
+
+MID_STORIES: List[FeatureStory] = [
+    FeatureStory(
+        num=4,
+        region="europe",
         kicker="BRUSSELS · SANCTIONS",
         tag="OFFICIAL",
         headline_html="EU unveils 22nd Russia sanctions package",
@@ -77,52 +107,22 @@ HERO_STORIES: List[FeatureStory] = [
         source="Reuters · Al Jazeera",
     ),
     FeatureStory(
-        num=2,
+        num=5,
         region="middle_east",
         kicker="WASHINGTON · IRAN FINANCE",
         tag="OFFICIAL",
-        headline_html='US blacklists <span class="num-sans">$14.7 billion</span> Iran shadow-bank network',
-        deck="US Treasury sanctions 24+ currency exchanges and front firms across UAE, Turkey &amp; Hong Kong over illicit flows.",
+        headline_html='US blacklists <span class="sans-num">$14.7 billion</span> Iran shadow-bank network',
+        deck="Treasury sanctions 24+ currency exchanges and front firms across UAE, Turkey &amp; Hong Kong.",
         source="US Treasury · Reuters",
     ),
     FeatureStory(
-        num=3,
-        region="europe",
-        kicker="PERM, RUSSIA · ENERGY WAR",
-        tag="REPORTED",
-        headline_html="Drones strike Russia's Perm Lukoil refinery",
-        deck="Reports say long-range drones hit the refinery 1,500 km inside Russia, killing 1 and damaging 3 units.",
-        source="AP · Reuters",
-    ),
-]
-
-MID_STORIES: List[FeatureStory] = [
-    FeatureStory(
-        num=4,
-        region="world_space",
-        kicker="EUROPE · SPACE & CLIMATE",
-        tag="OFFICIAL",
-        headline_html='Thales signs <span class="num-sans">€240m+</span> Copernicus satellite deal',
-        deck="Contract with Germany's OHB builds Sentinel-3NG altimeters for ocean &amp; ice tracking.",
-        source="Reuters · Thales",
-    ),
-    FeatureStory(
-        num=5,
+        num=6,
         region="middle_east",
         kicker="GAZA · HUMANITARIAN",
         tag="REPORTED",
         headline_html="Strike near Jabalia water well kills UNRWA worker",
         deck="UN relief agency reports staffer killed near a northern Gaza water point; aid groups urge protection.",
         source="UNRWA · Reuters",
-    ),
-    FeatureStory(
-        num=6,
-        region="s_america",
-        kicker="COLOMBIA · SECURITY",
-        tag="REPORTED",
-        headline_html="Car bomb injures 23 in Villavicencio blast",
-        deck="Morning vehicle bombing damages commercial blocks; officials probe regional militants.",
-        source="AP · Al Jazeera",
     ),
     FeatureStory(
         num=7,
@@ -200,7 +200,7 @@ BRIEF_COL_A: List[BriefStory] = [
     BriefStory(21, "oceania", "Australia AI:", "Canberra flags frontier AI security threat.", "REPORTED", "Reuters"),
     BriefStory(22, "s_america", "Colombia Drone:", "Police drone attack hurts 3 &amp; hits 60+ homes.", "REPORTED", "AP"),
     BriefStory(23, "n_america", "Hawaii Volcano:", "Kilauea pauses lava flow; USGS cuts alert.", "CONFIRMED", "USGS"),
-    BriefStory(24, "n_america", "NFL Monday:", "Commanders edge Cincinnati Bengals 22–20.", "OFFICIAL", "AP"),
+    BriefStory(24, "n_america", "NFL Result:", "Commanders edge Cincinnati Bengals 22–20.", "OFFICIAL", "AP"),
 ]
 
 BRIEF_COL_B: List[BriefStory] = [
@@ -219,12 +219,12 @@ BRIEF_COL_B: List[BriefStory] = [
 
 # Coordinates in SVG viewBox 0 0 360 172 (pairwise distance strictly >= 25px)
 MAP_PINS: List[Tuple[int, str, float, float]] = [
-    (1, "europe", 180.0, 41.0),       # Brussels
-    (2, "middle_east", 242.0, 56.0),  # Iran / Gulf
-    (3, "europe", 223.0, 30.0),       # Perm, Russia
-    (4, "world_space", 153.0, 28.0),  # North Atlantic / Europe Copernicus
-    (5, "middle_east", 204.0, 62.0),  # Gaza / Levant
-    (6, "s_america", 100.0, 96.0),    # Colombia
+    (1, "europe", 236.0, 28.0),       # Perm, Russia
+    (2, "world_space", 162.0, 44.0),  # Copernicus / Europe
+    (3, "s_america", 114.0, 78.0),    # Villavicencio, Colombia
+    (4, "europe", 190.0, 26.0),       # Brussels
+    (5, "middle_east", 242.0, 56.0),  # Iran / Gulf
+    (6, "middle_east", 204.0, 62.0),  # Gaza / Levant
     (7, "oceania", 342.0, 122.0),     # Vanuatu
     (8, "oceania", 342.0, 150.0),     # Wellington, NZ
     (9, "s_america", 90.0, 121.0),    # Ecuador
@@ -238,7 +238,7 @@ EXCLUSION_TEXT = (
     "Every story above happened or was first reported on Mon 23 Nov 2026. "
     "Left out: COP31 Antalya collapse (Sun 22 Nov) · 186-drone Kyiv strike (Sun 22 Nov) · "
     "Las Vegas GP &amp; ATP Finals (Sun 22 Nov) · Khartoum UN hit (Sun 22 Nov) · "
-    "Euclid space study (Tue 24 Nov)."
+    "Euclid telescope (Tue 24 Nov)."
 )
 
 EPISTEMIC_KEY = (

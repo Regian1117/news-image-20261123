@@ -33,10 +33,28 @@ from data import (
 from svg_scenes import build_world_map_svg, get_scene
 
 
+SVG_BG: Dict[int, str] = {
+    1: "#F1F5F9",
+    2: "#090F24",
+    3: "#FEF3C7",
+    4: "#EFF6FF",
+    5: "#FFFBEB",
+    6: "#F1F5F9",
+    7: "#0C4A6E",
+    8: "#166534",
+    9: "#3B0764",
+    10: "#1F2937",
+    11: "#052E16",
+    12: "#1C1917",
+    13: "#450A0A",
+}
+
+
 def _render_hero_card(story: FeatureStory) -> str:
     reg_color = str(REGION_BY_ID[story.region]["color"])
     tag_color = TAG_COLORS[story.tag]
-    scene_bg, scene_svg = get_scene(story.num)
+    _, scene_svg = get_scene(story.num)
+    svg_bg = SVG_BG[story.num]
     return f"""
     <article class="hero-card" style="border-top: 3.5px solid {reg_color};">
       <div class="card-top">
@@ -46,7 +64,7 @@ def _render_hero_card(story: FeatureStory) -> str:
         </div>
         <span class="tag-pill" style="background:{tag_color};">{story.tag}</span>
       </div>
-      <div class="hero-scene" style="background:{scene_bg};">{scene_svg}</div>
+      <div class="hero-scene" style="background:{svg_bg};">{scene_svg}</div>
       <h2 class="hero-hl">{story.headline_html}</h2>
       <p class="hero-deck">{story.deck}</p>
       <div class="card-src">{story.source}</div>
@@ -56,14 +74,15 @@ def _render_hero_card(story: FeatureStory) -> str:
 def _render_mid_card(story: FeatureStory) -> str:
     reg_color = str(REGION_BY_ID[story.region]["color"])
     tag_color = TAG_COLORS[story.tag]
-    scene_bg, scene_svg = get_scene(story.num)
+    _, scene_svg = get_scene(story.num)
+    svg_bg = SVG_BG[story.num]
     return f"""
     <article class="mid-card" style="border-top: 3px solid {reg_color};">
       <div class="mid-top">
         <span class="num-badge mid-badge" style="background:{reg_color};">{story.num}</span>
         <span class="mid-kicker">{story.kicker}</span>
       </div>
-      <div class="mid-scene" style="background:{scene_bg};">{scene_svg}</div>
+      <div class="mid-scene" style="background:{svg_bg};">{scene_svg}</div>
       <h3 class="mid-hl">{story.headline_html}</h3>
       <p class="mid-deck">{story.deck}</p>
       <div class="mid-foot">
@@ -264,7 +283,7 @@ def build_html() -> str:
     white-space: nowrap;
     line-height: 1.1;
   }}
-  .num-sans {{
+  .num-sans, .sans-num {{
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 900;
     letter-spacing: -0.2px;
@@ -340,7 +359,7 @@ def build_html() -> str:
     color: #020617;
     letter-spacing: -0.15px;
   }}
-  .hero-hl .num-sans {{
+  .hero-hl .num-sans, .hero-hl .sans-num {{
     font-size: 15.2px;
   }}
   .hero-deck {{
@@ -421,7 +440,7 @@ def build_html() -> str:
     color: #020617;
     letter-spacing: -0.1px;
   }}
-  .mid-hl .num-sans {{
+  .mid-hl .num-sans, .mid-hl .sans-num {{
     font-size: 11.6px;
   }}
   .mid-deck {{
@@ -856,7 +875,7 @@ DOM_AUDIT_JS = """
       briefCount: document.querySelectorAll('.b-row').length,
       pinCount: pins.length,
       minPinDist: Number(minDist.toFixed(1)),
-      pinSep_2_5_12: { '2-5': pDist('2', '5'), '2-12': pDist('2', '12'), '5-12': pDist('5', '12') },
+      pinSep_5_6_12: { '5-6': pDist('5', '6'), '5-12': pDist('5', '12'), '6-12': pDist('6', '12') },
       minPillPadPx: Number(globalMinPillPad.toFixed(2)),
       brief31,
       heroH: Math.round(document.querySelector('.hero-tier').getBoundingClientRect().height),

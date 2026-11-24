@@ -46,170 +46,169 @@ def _banner(
 
 
 def hero_scene_1() -> Tuple[str, str]:
-    """#1 EU 22nd Russia sanctions: EU stars, bank & shadow tanker under ban, 60 BANKS · 70 TANKERS."""
-    stars = []
-    for i in range(12):
-        ang = math.radians(i * 30)
-        sx = 46 + 22 * math.cos(ang)
-        sy = 38 + 22 * math.sin(ang)
-        stars.append(f'<polygon points="{_star_points(sx, sy, 3.8, 1.6)}" fill="#FACC15"/>')
+    """#1 Drones strike Russia's Perm Lukoil refinery: wide refinery strike on #F1F5F9 sky."""
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 76" width="100%" height="80" preserveAspectRatio="xMidYMid meet">
-  <rect width="310" height="76" fill="#162C6E"/>
-  <rect x="0" y="54" width="310" height="22" fill="#0F1F4D"/>
-  <circle cx="46" cy="38" r="29" fill="#1E3A8A" stroke="#3B82F6" stroke-width="1"/>
-  {''.join(stars)}
-  <text x="46" y="38.5" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="13" fill="#FFFFFF">EU 22</text>
-  <!-- Stylized bank icon -->
-  <g transform="translate(88, 12)">
-    <polygon points="18,0 36,9 0,9" fill="#CBD5E1"/>
-    <rect x="3" y="10" width="5" height="14" fill="#E2E8F0"/>
-    <rect x="11.5" y="10" width="5" height="14" fill="#E2E8F0"/>
-    <rect x="20" y="10" width="5" height="14" fill="#E2E8F0"/>
-    <rect x="28" y="10" width="5" height="14" fill="#E2E8F0"/>
-    <rect x="0" y="25" width="36" height="3.5" fill="#94A3B8"/>
-  </g>
-  <!-- Stylized shadow-fleet tanker -->
-  <g transform="translate(142, 16)">
-    <polygon points="0,14 68,14 60,24 6,24" fill="#64748B"/>
-    <rect x="10" y="8" width="16" height="6" fill="#94A3B8"/>
-    <rect x="30" y="8" width="16" height="6" fill="#94A3B8"/>
-    <rect x="50" y="3" width="10" height="11" fill="#CBD5E1"/>
-    <rect x="53" y="0" width="4" height="3" fill="#EF4444"/>
-  </g>
-  <!-- Red sanction rings -->
-  <circle cx="106" cy="26" r="14" fill="none" stroke="#EF4444" stroke-width="2.6"/>
-  <line x1="96" y1="16" x2="116" y2="36" stroke="#EF4444" stroke-width="2.6"/>
-  <circle cx="176" cy="28" r="14" fill="none" stroke="#EF4444" stroke-width="2.6"/>
-  <line x1="166" y1="18" x2="186" y2="38" stroke="#EF4444" stroke-width="2.6"/>
-  <!-- Crypto hexagon barred -->
-  <g transform="translate(226, 12)">
-    <polygon points="16,0 30,8 30,22 16,30 2,22 2,8" fill="#1E293B" stroke="#F59E0B" stroke-width="1.8"/>
-    <text x="16" y="15.5" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="12" fill="#FBBF24">₿</text>
-    <line x1="4" y1="4" x2="28" y2="26" stroke="#EF4444" stroke-width="2.4"/>
-  </g>
-  {_banner(88, 46, 212, 24, "60 BANKS · 70 TANKERS", "#B91C1C", "#FCA5A5", 1.2, 12.5)}
+  <rect width="310" height="76" fill="#F1F5F9"/>
+  <rect x="0" y="59" width="310" height="17" fill="#CBD5E1"/>
+  <line x1="0" y1="59" x2="310" y2="59" stroke="#94A3B8" stroke-width="1.2"/>
+  <!-- Long-range drone flight arc -->
+  <path d="M10,22 Q68,4 124,29" fill="none" stroke="#DC2626" stroke-width="2.0" stroke-dasharray="4,3"/>
+  <polygon points="32,12 52,17 34,23 39,17" fill="#0F172A"/>
+  <!-- Refinery towers & storage tanks -->
+  <rect x="60" y="42" width="18" height="17" rx="2" fill="#64748B" stroke="#334155" stroke-width="0.9"/>
+  <rect x="83" y="32" width="11" height="27" fill="#475569"/>
+  <rect x="98" y="18" width="13" height="41" fill="#334155"/>
+  <rect x="115" y="27" width="11" height="32" fill="#475569"/>
+  <rect x="131" y="40" width="22" height="19" rx="2" fill="#64748B" stroke="#334155" stroke-width="0.9"/>
+  <!-- Smoke plume & impact burst -->
+  <circle cx="127" cy="17" r="9.5" fill="#94A3B8" opacity="0.8"/>
+  <circle cx="140" cy="11" r="11" fill="#64748B" opacity="0.6"/>
+  <polygon points="122,20 128,29 138,25 132,35 142,41 130,42 128,53 121,43 110,45 117,36 110,28 120,30" fill="#DC2626"/>
+  <polygon points="123,27 127,33 134,32 129,38 133,43 126,41 123,46 120,40 114,41 119,36 116,31 122,32" fill="#FACC15"/>
+  {_banner(158, 9, 144, 27, "1,500 KM STRIKE", "#B91C1C", "#FFFFFF", 1.4, 12.6)}
+  {_banner(158, 41, 144, 26, "PERM · 3 UNITS HIT", "#0F172A", "#64748B", 1.2, 10.8, "#F8FAFC")}
 </svg>"""
-    return "#162C6E", svg
+    return "#F1F5F9", svg
 
 
 def hero_scene_2() -> Tuple[str, str]:
-    """#2 US blacklists Iran shadow-bank network: Treasury + Tehran nodes + 24+ FRONTS HIT / IRAN OFAC SANCTIONS."""
+    """#2 Thales Copernicus satellite deal: dark #090F24 orbital Earth-limb scene with €240m+ & SENTINEL 3NG CLIMATE."""
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 76" width="100%" height="80" preserveAspectRatio="xMidYMid meet">
-  <rect width="310" height="76" fill="#1C1917"/>
-  <rect x="0" y="0" width="310" height="3" fill="#D97706"/>
-  <!-- US Treasury pediment left -->
-  <g transform="translate(8, 8)">
-    <polygon points="27,0 54,11 0,11" fill="#FACC15"/>
-    <rect x="4" y="12" width="6" height="24" fill="#FFFFFF"/>
-    <rect x="15.5" y="12" width="6" height="24" fill="#FFFFFF"/>
-    <rect x="27" y="12" width="6" height="24" fill="#FFFFFF"/>
-    <rect x="38.5" y="12" width="6" height="24" fill="#FFFFFF"/>
-    <rect x="47.5" y="12" width="3.5" height="24" fill="#E2E8F0"/>
-    <rect x="0" y="37" width="54" height="5" fill="#D97706"/>
-    <text x="27" y="55" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="9.2" fill="#FDE68A">US TREASURY</text>
-  </g>
-  <!-- Shadow network links cut -->
-  <line x1="68" y1="24" x2="108" y2="24" stroke="#F59E0B" stroke-width="2.2" stroke-dasharray="4,3"/>
-  <line x1="68" y1="40" x2="108" y2="40" stroke="#F59E0B" stroke-width="2.2" stroke-dasharray="4,3"/>
-  <circle cx="88" cy="32" r="10.5" fill="#DC2626" stroke="#FFFFFF" stroke-width="1.6"/>
-  <line x1="83" y1="27" x2="93" y2="37" stroke="#FFFFFF" stroke-width="2.4"/>
-  <line x1="93" y1="27" x2="83" y2="37" stroke="#FFFFFF" stroke-width="2.4"/>
-  <!-- Tehran arch / front hub -->
-  <g transform="translate(110, 9)">
-    <path d="M4,41 L10,13 L18,3 L26,13 L32,41 L24,41 L22,26 Q18,21 14,26 L12,41 Z" fill="#F5F5F4"/>
-    <circle cx="18" cy="12" r="3.2" fill="#F59E0B"/>
-    <text x="18" y="54" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="9.2" fill="#F5F5F4">TEHRAN</text>
-  </g>
-  {_banner(152, 8, 152, 27, "24+ FRONTS HIT", "#B91C1C", "#FECACA", 1.4, 12.6)}
-  {_banner(152, 41, 152, 27, "IRAN OFAC SANCTIONS", "#1E3A8A", "#FACC15", 1.5, 10.8, "#FFFFFF")}
-</svg>"""
-    return "#1C1917", svg
-
-
-def hero_scene_3() -> Tuple[str, str]:
-    """#3 Drones strike Russia's Perm Lukoil refinery: refinery silhouette, blast, drone arc, 1,500 KM STRIKE."""
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 76" width="100%" height="80" preserveAspectRatio="xMidYMid meet">
-  <rect width="310" height="76" fill="#1E293B"/>
-  <rect x="0" y="58" width="310" height="18" fill="#0F172A"/>
-  <!-- Flight arc & drone -->
-  <path d="M12,24 Q70,4 128,31" fill="none" stroke="#F87171" stroke-width="1.8" stroke-dasharray="4,3"/>
-  <polygon points="34,15 52,19 36,24 40,19" fill="#E2E8F0"/>
-  <!-- Refinery towers & storage tanks -->
-  <rect x="86" y="34" width="10" height="26" fill="#475569"/>
-  <rect x="100" y="20" width="12" height="40" fill="#64748B"/>
-  <rect x="116" y="28" width="10" height="32" fill="#475569"/>
-  <rect x="64" y="42" width="18" height="18" rx="2" fill="#334155"/>
-  <rect x="132" y="39" width="22" height="21" rx="2" fill="#475569"/>
-  <!-- Smoke & blast -->
-  <circle cx="128" cy="18" r="10" fill="#64748B" opacity="0.65"/>
-  <circle cx="140" cy="12" r="12" fill="#475569" opacity="0.55"/>
-  <polygon points="124,22 130,30 140,26 134,36 144,42 132,43 130,53 123,44 112,46 119,37 112,29 122,31" fill="#F97316"/>
-  <polygon points="125,28 129,34 136,33 131,39 135,44 128,42 125,47 122,41 116,42 121,37 118,32 124,33" fill="#FDE047"/>
-  {_banner(160, 12, 140, 26, "1,500 KM STRIKE", "#B91C1C", "#FCA5A5", 1.2, 12.2)}
-  {_banner(160, 44, 140, 24, "PERM · 3 UNITS HIT", "#0F172A", "#64748B", 1.1, 10.5, "#E2E8F0")}
-</svg>"""
-    return "#1E293B", svg
-
-
-def mid_scene_4() -> Tuple[str, str]:
-    """#4 Copernicus satellite deal: dark #090F24 space, satellite scan cone, €240m+."""
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 70" width="100%" height="46" preserveAspectRatio="xMidYMid meet">
-  <rect width="216" height="70" fill="#090F24"/>
+  <rect width="310" height="76" fill="#090F24"/>
   <!-- Stars -->
-  <circle cx="16" cy="12" r="1.3" fill="#E2E8F0"/>
-  <circle cx="48" cy="9" r="1.1" fill="#93C5FD"/>
-  <circle cx="96" cy="14" r="1.4" fill="#FFFFFF"/>
-  <circle cx="118" cy="8" r="1.1" fill="#BAE6FD"/>
-  <!-- Earth limb -->
-  <path d="M0,62 Q68,44 148,68 L0,70 Z" fill="#0369A1"/>
-  <path d="M0,62 Q68,44 148,68" fill="none" stroke="#38BDF8" stroke-width="2"/>
-  <!-- Radar scan beam -->
-  <polygon points="56,28 34,58 78,56" fill="#38BDF8" opacity="0.28"/>
-  <!-- Satellite -->
-  <rect x="48" y="18" width="16" height="11" rx="1.5" fill="#F59E0B" stroke="#FEF3C7" stroke-width="1"/>
-  <rect x="22" y="20" width="23" height="7" fill="#2563EB" stroke="#93C5FD" stroke-width="0.9"/>
-  <rect x="67" y="20" width="23" height="7" fill="#2563EB" stroke="#93C5FD" stroke-width="0.9"/>
-  {_banner(100, 18, 108, 34, "€240m+", "#0F172A", "#38BDF8", 1.5, 16.0)}
+  <circle cx="14" cy="12" r="1.2" fill="#E2E8F0"/>
+  <circle cx="42" cy="8" r="1.0" fill="#93C5FD"/>
+  <circle cx="114" cy="11" r="1.4" fill="#FFFFFF"/>
+  <circle cx="138" cy="18" r="1.1" fill="#BAE6FD"/>
+  <!-- Glowing ocean & ice Earth limb -->
+  <path d="M0,62 Q78,41 168,72 L0,76 Z" fill="#0369A1"/>
+  <path d="M18,64 Q56,52 98,58 Q74,66 36,68 Z" fill="#E0F2FE" opacity="0.85"/>
+  <path d="M0,62 Q78,41 168,72" fill="none" stroke="#38BDF8" stroke-width="2.2"/>
+  <!-- Glowing cyan ocean/ice altimeter scan beam -->
+  <polygon points="68,30 34,62 104,60" fill="#38BDF8" opacity="0.28"/>
+  <line x1="68" y1="30" x2="68" y2="57" stroke="#7DD3FC" stroke-width="1.4" stroke-dasharray="3,2"/>
+  <!-- Sentinel 3NG satellite array -->
+  <rect x="57" y="17" width="22" height="13" rx="2" fill="#F59E0B" stroke="#FEF3C7" stroke-width="1.2"/>
+  <rect x="20" y="19" width="33" height="9" rx="1" fill="#2563EB" stroke="#93C5FD" stroke-width="1.1"/>
+  <line x1="31" y1="19" x2="31" y2="28" stroke="#93C5FD" stroke-width="0.8"/>
+  <line x1="42" y1="19" x2="42" y2="28" stroke="#93C5FD" stroke-width="0.8"/>
+  <rect x="83" y="19" width="33" height="9" rx="1" fill="#2563EB" stroke="#93C5FD" stroke-width="1.1"/>
+  <line x1="94" y1="19" x2="94" y2="28" stroke="#93C5FD" stroke-width="0.8"/>
+  <line x1="105" y1="19" x2="105" y2="28" stroke="#93C5FD" stroke-width="0.8"/>
+  {_banner(144, 8, 158, 27, "€240m+", "#0284C7", "#E0F2FE", 1.5, 14.2)}
+  {_banner(144, 41, 158, 27, "SENTINEL 3NG CLIMATE", "#0F172A", "#38BDF8", 1.4, 10.4, "#FFFFFF")}
 </svg>"""
     return "#090F24", svg
 
 
-def mid_scene_5() -> Tuple[str, str]:
-    """#5 Gaza UNRWA water well: Mediterranean coast, blue UN water drop + burst, GAZA AID HIT."""
+def hero_scene_3() -> Tuple[str, str]:
+    """#3 Villavicencio car bomb: wide urban blast on warm amber #FEF3C7 ground."""
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 76" width="100%" height="80" preserveAspectRatio="xMidYMid meet">
+  <rect width="310" height="76" fill="#FEF3C7"/>
+  <rect x="0" y="59" width="310" height="17" fill="#FDE68A"/>
+  <line x1="0" y1="59" x2="310" y2="59" stroke="#D97706" stroke-width="1.2"/>
+  <!-- Commercial urban blocks -->
+  <rect x="10" y="24" width="22" height="35" fill="#475569"/>
+  <rect x="36" y="13" width="26" height="46" fill="#334155"/>
+  <rect x="66" y="29" width="20" height="30" fill="#475569"/>
+  <rect x="90" y="19" width="26" height="40" fill="#334155"/>
+  <rect x="120" y="31" width="20" height="28" fill="#64748B"/>
+  <!-- Shockwave rings -->
+  <circle cx="76" cy="39" r="26" fill="none" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="3,2" opacity="0.65"/>
+  <!-- Blast starburst -->
+  <polygon points="76,12 83,27 99,21 90,36 105,44 87,46 84,61 73,49 58,54 65,40 51,32 68,30" fill="#DC2626"/>
+  <polygon points="76,21 80,31 91,29 84,38 92,44 80,44 78,52 71,44 63,46 68,38 61,32 71,33" fill="#FACC15"/>
+  {_banner(148, 8, 154, 27, "23 INJURED", "#B91C1C", "#FFFFFF", 1.5, 13.4)}
+  {_banner(148, 41, 154, 27, "VILLAVICENCIO BLAST", "#0F172A", "#D97706", 1.4, 10.4, "#FFFFFF")}
+</svg>"""
+    return "#FEF3C7", svg
+
+
+def mid_scene_4() -> Tuple[str, str]:
+    """#4 EU 22nd Russia sanctions: EU stars + blocked tanker/crypto + 60 BANKS · 70 TANKERS on #EFF6FF."""
+    stars = []
+    for i in range(12):
+        ang = math.radians(i * 30)
+        sx = 34 + 13.5 * math.cos(ang)
+        sy = 20 + 13.5 * math.sin(ang)
+        stars.append(f'<polygon points="{_star_points(sx, sy, 2.7, 1.1)}" fill="#FACC15"/>')
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 70" width="100%" height="46" preserveAspectRatio="xMidYMid meet">
-  <rect width="216" height="70" fill="#0369A1"/>
-  <!-- Mediterranean wave highlights -->
-  <path d="M3,20 Q12,16 21,20 M2,44 Q11,40 20,44" fill="none" stroke="#7DD3FC" stroke-width="1.3" opacity="0.75"/>
-  <!-- Mediterranean coast & land -->
-  <path d="M36,0 L216,0 L216,70 L18,70 Q34,38 36,0 Z" fill="#E7D8C0"/>
-  <path d="M36,0 Q34,38 18,70" fill="none" stroke="#0284C7" stroke-width="2.8"/>
+  <rect width="216" height="70" fill="#EFF6FF"/>
+  <!-- EU circle left -->
+  <circle cx="34" cy="20" r="18" fill="#1E3A8A"/>
+  {''.join(stars)}
+  <text x="34" y="20.5" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="8.6" fill="#FFFFFF">EU 22</text>
+  <!-- Blocked tanker center -->
+  <g transform="translate(64, 10)">
+    <polygon points="0,12 58,12 51,21 6,21" fill="#334155"/>
+    <rect x="8" y="6" width="14" height="6" fill="#64748B"/>
+    <rect x="25" y="6" width="14" height="6" fill="#64748B"/>
+    <rect x="42" y="2" width="9" height="10" fill="#475569"/>
+  </g>
+  <circle cx="93" cy="21" r="13.5" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <line x1="83.5" y1="11.5" x2="102.5" y2="30.5" stroke="#DC2626" stroke-width="2.5"/>
+  <!-- Blocked crypto badge right -->
+  <g transform="translate(142, 6)">
+    <polygon points="15,0 28,7.5 28,21.5 15,29 2,21.5 2,7.5" fill="#1E293B" stroke="#D97706" stroke-width="1.7"/>
+    <text x="15" y="15" text-anchor="middle" dominant-baseline="central" font-family="{FONT_SANS}" font-weight="900" font-size="11.5" fill="#FACC15">₿</text>
+    <line x1="4" y1="4" x2="26" y2="25" stroke="#DC2626" stroke-width="2.4"/>
+  </g>
+  <!-- Bank emblem far right -->
+  <g transform="translate(179, 8)">
+    <polygon points="13,0 26,7 0,7" fill="#1E3A8A"/>
+    <rect x="3" y="8" width="4" height="12" fill="#334155"/>
+    <rect x="11" y="8" width="4" height="12" fill="#334155"/>
+    <rect x="19" y="8" width="4" height="12" fill="#334155"/>
+    <rect x="0" y="21" width="26" height="3" fill="#1E3A8A"/>
+  </g>
+  {_banner(10, 41, 196, 25, "60 BANKS · 70 TANKERS", "#B91C1C", "#FFFFFF", 1.3, 11.4)}
+</svg>"""
+    return "#EFF6FF", svg
+
+
+def mid_scene_5() -> Tuple[str, str]:
+    """#5 US blacklists Iran shadow-bank network: Treasury + blocked flow + 24+ FRONTS HIT on #FFFBEB."""
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 70" width="100%" height="46" preserveAspectRatio="xMidYMid meet">
+  <rect width="216" height="70" fill="#FFFBEB"/>
+  <!-- US Treasury pediment left -->
+  <g transform="translate(7, 13)">
+    <polygon points="22,0 44,10 0,10" fill="#B45309"/>
+    <rect x="3" y="11" width="5.5" height="22" fill="#1E293B"/>
+    <rect x="13" y="11" width="5.5" height="22" fill="#1E293B"/>
+    <rect x="23" y="11" width="5.5" height="22" fill="#1E293B"/>
+    <rect x="33" y="11" width="5.5" height="22" fill="#1E293B"/>
+    <rect x="0" y="34" width="44" height="4.5" fill="#B45309"/>
+  </g>
+  <!-- Blocked money flow -->
+  <line x1="53" y1="27" x2="81" y2="27" stroke="#D97706" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <line x1="53" y1="41" x2="81" y2="41" stroke="#D97706" stroke-width="2.2" stroke-dasharray="4,3"/>
+  <circle cx="67" cy="34" r="10.0" fill="#DC2626" stroke="#FFFFFF" stroke-width="1.6"/>
+  <line x1="62.5" y1="29.5" x2="71.5" y2="38.5" stroke="#FFFFFF" stroke-width="2.3"/>
+  <line x1="71.5" y1="29.5" x2="62.5" y2="38.5" stroke="#FFFFFF" stroke-width="2.3"/>
+  {_banner(83, 17, 128, 36, "24+ FRONTS HIT", "#B91C1C", "#FFFFFF", 1.5, 12.2)}
+</svg>"""
+    return "#FFFBEB", svg
+
+
+def mid_scene_6() -> Tuple[str, str]:
+    """#6 Gaza UNRWA water well: Mediterranean coast, blue UN water drop + strike burst, GAZA AID HIT on #F1F5F9."""
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 70" width="100%" height="46" preserveAspectRatio="xMidYMid meet">
+  <rect width="216" height="70" fill="#F1F5F9"/>
+  <!-- Mediterranean bay left -->
+  <path d="M0,0 L35,0 Q32,38 17,70 L0,70 Z" fill="#0369A1"/>
+  <path d="M3,20 Q12,16 21,20 M2,44 Q11,40 20,44" fill="none" stroke="#7DD3FC" stroke-width="1.3" opacity="0.8"/>
+  <!-- Coastal strip -->
+  <path d="M35,0 L88,0 L88,70 L17,70 Q32,38 35,0 Z" fill="#E7D8C0"/>
+  <path d="M35,0 Q32,38 17,70" fill="none" stroke="#0284C7" stroke-width="2.6"/>
   <!-- Blue UN water drop -->
   <path d="M53,12 C53,12 37,33 37,45 A16,16 0 0,0 69,45 C69,33 53,12 53,12 Z" fill="#0284C7" stroke="#FFFFFF" stroke-width="2.0"/>
   <circle cx="48" cy="44" r="3.4" fill="#E0F2FE"/>
   <!-- Impact burst -->
   <polygon points="70,13 74,21 82,19 77,26 83,32 75,32 72,39 68,32 61,33 65,26 62,19 68,21" fill="#B91C1C"/>
   <circle cx="71" cy="26" r="3.8" fill="#FDE047"/>
-  {_banner(84, 17, 126, 36, "GAZA AID HIT", "#991B1B", "#FFFFFF", 1.8, 14.2)}
+  {_banner(84, 17, 126, 36, "GAZA AID HIT", "#991B1B", "#FFFFFF", 1.6, 14.2)}
 </svg>"""
-    return "linear-gradient(90deg, #0369A1 0%, #0369A1 50%, #E7D8C0 50%, #E7D8C0 100%)", svg
-
-
-def mid_scene_6() -> Tuple[str, str]:
-    """#6 Villavicencio car bomb: urban skyline + blast starburst, 23 HURT."""
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 70" width="100%" height="46" preserveAspectRatio="xMidYMid meet">
-  <rect width="216" height="70" fill="#1E293B"/>
-  <rect x="0" y="56" width="216" height="14" fill="#0F172A"/>
-  <!-- Urban blocks -->
-  <rect x="8" y="22" width="18" height="36" fill="#334155"/>
-  <rect x="30" y="14" width="20" height="44" fill="#475569"/>
-  <rect x="54" y="28" width="16" height="30" fill="#334155"/>
-  <rect x="74" y="20" width="18" height="38" fill="#475569"/>
-  <!-- Blast starburst -->
-  <polygon points="54,14 60,27 74,22 66,35 80,42 64,44 62,57 52,46 39,51 45,38 33,31 47,29" fill="#EF4444"/>
-  <polygon points="54,22 58,31 67,29 61,37 68,42 58,42 56,49 50,42 43,44 47,37 41,32 50,32" fill="#FACC15"/>
-  {_banner(94, 18, 114, 34, "23 HURT", "#B91C1C", "#FCA5A5", 1.5, 16.0)}
-</svg>"""
-    return "#1E293B", svg
+    return "#F1F5F9", svg
 
 
 def mid_scene_7() -> Tuple[str, str]:
