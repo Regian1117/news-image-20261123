@@ -34,12 +34,12 @@ from svg_scenes import build_world_map_svg, get_scene
 
 
 SVG_BG: Dict[int, str] = {
-    1: "#F1F5F9",
-    2: "#090F24",
-    3: "#FEF3C7",
-    4: "#EFF6FF",
-    5: "#FFFBEB",
-    6: "#F1F5F9",
+    1: "#EFF6FF",
+    2: "#FFFBEB",
+    3: "#F1F5F9",
+    4: "#090F24",
+    5: "#F1F5F9",
+    6: "#FEF3C7",
     7: "#0C4A6E",
     8: "#166534",
     9: "#3B0764",
@@ -446,6 +446,7 @@ def build_html() -> str:
   .mid-deck {{
     font-size: 10.4px;
     line-height: 1.14;
+    letter-spacing: 0.1px;
     color: #1E293B;
   }}
   .mid-foot {{
@@ -653,6 +654,9 @@ def build_html() -> str:
     white-space: nowrap;
     flex-shrink: 0;
   }}
+  .db-txt {{
+    letter-spacing: 0.1px;
+  }}
 
   /* Bottom footer */
   .footer {{
@@ -719,7 +723,7 @@ def build_html() -> str:
 
     <section class="excl-bar" aria-label="Date verification">
       <span class="excl-badge">DATE CHECK · EXCLUDED</span>
-      <span class="excl-text">{EXCLUSION_TEXT}</span>
+      <span class="excl-text db-txt">{EXCLUSION_TEXT}</span>
     </section>
 
     <footer class="footer">
@@ -875,7 +879,7 @@ DOM_AUDIT_JS = """
       briefCount: document.querySelectorAll('.b-row').length,
       pinCount: pins.length,
       minPinDist: Number(minDist.toFixed(1)),
-      pinSep_5_6_12: { '5-6': pDist('5', '6'), '5-12': pDist('5', '12'), '6-12': pDist('6', '12') },
+      pinSep_2_5_12: { '2-5': pDist('2', '5'), '2-12': pDist('2', '12'), '5-12': pDist('5', '12') },
       minPillPadPx: Number(globalMinPillPad.toFixed(2)),
       brief31,
       heroH: Math.round(document.querySelector('.hero-tier').getBoundingClientRect().height),
@@ -937,8 +941,8 @@ def render_frontpage() -> None:
 
     if errs:
         raise SystemExit(f"DOM audit failed with {len(errs)} error(s)")
-    if size_kib > 270.0:
-        raise SystemExit(f"entry.png too large: {size_kib:.1f} KiB > 270 KiB")
+    if size_kib > 250.0:
+        raise SystemExit(f"entry.png too large: {size_kib:.1f} KiB > 250 KiB")
 
 
 if __name__ == "__main__":
